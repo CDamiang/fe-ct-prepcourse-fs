@@ -1,4 +1,4 @@
-let array = []
+let array = [1,3,5,7,8,9,10,1]
 /* function multiplicarElementosPorIndice(array) {
     // Multiplica cada elemento del array por su índice.
     // Devuelve el nuevo arreglo con los resultados.
@@ -195,7 +195,7 @@ contarParesConContinue([1,2,3,4,5,6,7,8]) */
     
   } */
 
-  function encontrarElementoRepetido(numeros) {
+/*   function encontrarElementoRepetido(numeros) {
     // La función recibe un argumento "numeros" que es un array de números.
     // Retorna el primer elemento repetido que se encuentre en el array.
     // Tu código:
@@ -213,7 +213,120 @@ contarParesConContinue([1,2,3,4,5,6,7,8]) */
     return undefined; // Si no se encuentra ningún elemento repetido
 
    
-  }
-  encontrarElementoRepetido([1,3,5,7,8,9,10,1])
+  } */
+//   encontrarElementoRepetido([1,3,5,7,8,9,10,1])
 
+function sumarArray(arrayOfNumbers) {
+    // Recibes un arreglo de números y un callback.
+    // Suma todos los números del arreglo.
+    // Este resultado debes pasárselo como argumento al callback recibido.
+    // NOTA: no debes retornar nada.
+    // Tu código:
+    let resultado= 0
+    for (let i = 0; i < arrayOfNumbers.length; i++) {
+       resultado += arrayOfNumbers[i]; 
+                  
+    }
+    console.log(resultado)
+ }
+//sumarArray([1,3,5,7,8,9,10,1])
+
+function map(array, cb) {
+    // Itera sobre el arreglo y por cada elemento, pasárselo como argumento al callback.
+    // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
+    // Retorna el nuevo arreglo.
+    // Tu código:
+    let resultado = []
+    for (let i = 0; i < array.length; i++) {
+      resultado.push(cb(array[i]));    
+    }
+    return resultado 
+  }
+  //map([1,3,5,7,8,9,10,1])
+  let objUsu ={
+    amigo: [1,3,5,7,8,9,10,1]
+  }
+
+  function agregarAmigo(objetoUsuario, nuevoAmigo) {
+    // El parámetro "objetoUsuario" tiene una propiedad llamada "amigos" igual a un arreglo.
+    // Debes agregar el "nuevoAmigo" al final de este arreglo.
+    // Retornar el objeto.
+    // Tu código:
+    objetoUsuario.amigo.push(nuevoAmigo)
+    return objetoUsuario
+  
+  }
+  //console.log(agregarAmigo(objUsu,'Damian'))
+
+
+
+
+  const user = {
+    usernombre: 'Jhon Doe',
+    password: 'JavaScript es genial!',
+    posts: [
+      {
+        id: '1',
+        title: 'Aventuras en JS!',
+        likes: 10,
+      },
+      {
+        id: '2',
+        title: 'Soy Henry!',
+        likes: 100,
+      },
+      {
+        id: '3',
+        title: 'Qué es un JavaScript?',
+        likes: 35,
+      },
+      {
+        id: '4',
+        title: 'JS Objects for Dummies',
+        likes: 42,
+      },
+      {
+        id: '5',
+        title: 'Educación online',
+        likes: 99,
+      },
+    ],
+  };
+
+  function sumarLikesDeUsuario(objetoUsuario) {
+    // El parámetro "objetoUsuario" tiene una propiedad llamada "posts" que es un arreglo.
+    // Este arreglo contiene objetos (post).
+    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
+    // Debes sumar los likes de todos los post y retornar el resultado.
+    // Tu código:
+    let suma = 0
+    let posteos = objetoUsuario.posts
+    for (let i = 0; i < posteos.length; i++) {
+        suma += posteos[i].likes        
+    }
+    return suma
+    
+  }
+  //console.log(sumarLikesDeUsuario(user))
+  //console.log(user.posts)
+
+ let objeto1 = { x: 1, y: 2 }
+
+  function deObjetoAarray(objeto) {
+    // Recibes un objeto. Tendrás que crear un arreglo de arreglos.
+    // Cada elemento del arreglo padre será un nuevo arreglo que contendrá dos elementos.
+    // Estos elementos debe ser cada par clave:valor del objeto recibido.
+    // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
+    // Tu código:
+    let array =[]
+    
+    for (let pro in objeto) {
+      let arrayhijo=[]      
+      arrayhijo.push(pro)
+      arrayhijo.push(objeto[pro])      
+      array.push(arrayhijo);    
+    }
+    return array
+  }
+  console.log(deObjetoAarray(objeto1))
   

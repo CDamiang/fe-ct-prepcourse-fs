@@ -6,6 +6,15 @@ function deObjetoAarray(objeto) {
   // Estos elementos debe ser cada par clave:valor del objeto recibido.
   // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
   // Tu código:
+  let array =[]
+    
+  for (let pro in objeto) {
+    let arrayhijo=[]     
+    arrayhijo.push(pro)
+    arrayhijo.push(objeto[pro])
+    array.push(arrayhijo);    
+  }
+  return array
 }
 
 function numberOfCharacters(string) {
